@@ -11,7 +11,7 @@ export default {
       code: `---
 title: "TCP Packet"
 ---
-packet-beta
+packet
 0-15: "Source Port"
 16-31: "Destination Port"
 32-63: "Sequence Number"
@@ -29,6 +29,16 @@ packet-beta
 144-159: "Urgent Pointer"
 160-191: "(Options and Padding)"
 192-255: "Data (variable length)"`,
+    },
+    {
+      title: 'UDP Packet with Relative Bits',
+      code: `packet
+title UDP Packet
++16: "Source Port"
++16: "Destination Port"
++16: "Length"
++16: "Checksum"
+64-95: "Data (variable length)"`,
     },
   ],
 } satisfies DiagramMetadata;
